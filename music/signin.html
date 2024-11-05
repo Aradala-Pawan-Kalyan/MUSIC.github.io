@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      
+        body{
+            background-color:black;
+
+        }
+        #divis1{
+           
+              width: 50%;
+              height:500px;
+              float: left;
+              display: inline-block;
+              
+        }
+    img{
+        border-radius: 20px;
+    }
+        #maindiv{
+            background-color:wheat;
+            width: 44%;
+            border-radius: 15px;
+            height: 650px;
+            margin-right: 590px;
+            margin-left:800px;
+        }
+        h1{
+            margin-left: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 35px;
+        }
+        form{
+            padding: 40px;
+            text-align:left;
+        }
+        label{
+            display: block;
+            margin-top: 10px;
+            font-size: 20px;
+            font-weight: bold;
+            color:black;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"]{
+            width:70%;
+            height: 30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            font-family:'Courier New', Courier, monospace;
+            
+        }
+        
+        textarea{
+            width: 100%;
+        }
+        input[type="submit"],input[type="reset"]{
+            width: 26%;
+            background-color: green;
+            color: aliceblue;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 50px;
+
+         }
+         #div3{
+            background-color: aliceblue;
+            width: 44%;
+            height:30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-left:120px;
+            display:flex;
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+         }
+         a{
+            text-decoration: none;
+         }
+         #div4{
+            background-color: aliceblue;
+            width: 44%;
+            height:30px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-left: 120px;
+            display:flex;
+            align-items: center;
+            padding-top: 5px;
+            padding-bottom: 10px;
+            margin-top: 20px
+
+         }
+         #para1{
+            margin-left: 220px;
+         }
+    
+       
+    </style>
+
+ </head>
+  <body>
+    <div id="divis1">
+        <img src="../background7.jpeg"height="650px"width="100%">
+
+    </div>
+    <div id="maindiv">
+        <a href="../home.html"><button style="background-color: blue;color: aliceblue;border-radius: 10px;float: right;margin: 10px;">Back</button></a>
+        <form onsubmit="return(sub())" name="myform">
+            <h1 style="color: rgb(226, 110, 43);font-family :cursive;">Sign in</h1>
+            <label for="name">Name:</label>
+            <input type="text" id="name" onkeyup="validateName()"required>
+            <div class="message" id="nameMessage"></div><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" onkeyup="validateEmail()"required>
+            <div class="message" id="emailMessage"></div><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" onkeyup="validatePassword()"required>
+            <div class="password" id="passwordMessage"></div><br>
+            <input type="Submit" value="Submit form">
+           
+         </form>
+
+         <a href="https://www.google,com"><div id="div3">
+           <img src="../images/google.jpg"height="40"><span style="color: blue;">Continue with google</span>
+
+         </div></a>
+         <p id="para1">(OR)</p>
+         <a href="https://www.facebook.com"><div id="div4">
+            <img src="../images/facebook.jpg"height="40"><span style="color: blue;">Continue with facebook</span>
+ 
+          </div></a>
+     </div> 
+     
+        
+    <script>
+        function validateName(){
+    const name = document.getElementById("name").value;
+    const nameInput = document.getElementById("name");
+    const nameMessage = document.getElementById("nameMessage");
+    if(name.length >= 3){
+        nameInput.style.borderColor = "green";
+        nameMessage.textContent = "Name looks good";
+        nameMessage.style.color="green";
+        return true;
+    }
+    else{
+        nameInput.style.borderColor = "red";
+        nameMessage.textContent = "Name should be at least 3 characters long";
+        nameMessage.style.color = "red";
+        return false;
+    }
+}
+function validateEmail(){
+    const email = document.getElementById("email").value;
+    const emailInput = document.getElementById("email");
+    const emailMessage = document.getElementById("emailMessage");
+    const emailPattern = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if(emailPattern.test(email)){
+        emailInput.style.borderColor = "green";
+        emailMessage.textContent = "Valid email";
+        emailMessage.style.color="green";
+        return true;
+    }
+    else{
+        emailInput.style.borderColor = "red";
+        emailMessage.textContent = "Enter a valid email !";
+        emailMessage.style.color = "red";
+        return false;
+    }
+}
+    function validatePassword(){
+        const password = document.getElementById("password").value;
+        const passwordInput = document.getElementById("password");
+        const passwordMessage = document.getElementById("passwordMessage");
+        
+        if(password.length >= 6){
+            passwordInput.style.borderColor = "green";
+            passwordMessage.textContent = "strong good";
+            passwordMessage.style.color="green";
+            return true;
+        }
+        else{
+            passwordInput.style.borderColor = "red";
+            passwordMessage.textContent = "Password should be at least 6 characters Long";
+            passwordMessage.style.color = "red";
+            return false;
+        }
+    }
+    </script>
+
+ </body>
+</html>
